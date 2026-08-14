@@ -29,11 +29,11 @@ const config: Config = {
   },
 
   url: 'https://WorldmeQC.github.io',
-  baseUrl: '/loeba-server/',
+  baseUrl: '/Loeba-Server/',
 
   organizationName: 'WorldmeQC',
   projectName: 'loeba-server',
-
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
 
