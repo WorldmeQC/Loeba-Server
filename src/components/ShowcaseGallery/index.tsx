@@ -1,5 +1,6 @@
 import type {ReactNode} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
@@ -38,7 +39,7 @@ export default function ShowcaseGallery(): ReactNode {
           <div className={styles.galleryTrack}>
             {trackImages.map((src, idx) => (
               <div key={`${src}-${idx}`} className={styles.imageCard}>
-                <img src={src} alt={`服务器截图 ${(idx % images.length) + 1}`} loading="lazy" />
+                <img src={useBaseUrl(src)} alt={`服务器截图 ${(idx % images.length) + 1}`} loading="lazy" />
               </div>
             ))}
           </div>

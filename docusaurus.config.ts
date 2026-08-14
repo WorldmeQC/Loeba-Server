@@ -15,7 +15,7 @@ function getShowcaseImages(): string[] {
     .readdirSync(dir)
     .filter((file) => allowed.test(file))
     .sort()
-    .map((file) => `/img/showcase/${file}`);
+    .map((file) => `img/showcase/${file}`);
 }
     
 
