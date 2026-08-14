@@ -1,0 +1,137 @@
+.showcaseSection {
+  padding: 5rem 1rem 6rem;
+  background: var(--ifm-background-color);
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.sectionSubtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 2rem;
+}
+
+.emptyHint {
+  text-align: center;
+  color: var(--ifm-color-emphasis-700);
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.emptyHint code {
+  background: var(--ifm-color-emphasis-200);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.35rem;
+}
+
+.galleryBox {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  padding: 1rem;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+}
+
+.galleryBox::before,
+.galleryBox::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.galleryBox::before {
+  left: 0;
+  background: linear-gradient(to right, var(--ifm-color-emphasis-100), transparent);
+}
+
+.galleryBox::after {
+  right: 0;
+  background: linear-gradient(to left, var(--ifm-color-emphasis-100), transparent);
+}
+
+.galleryTrack {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: scroll 35s linear infinite;
+  will-change: transform;
+}
+
+.galleryTrack:hover {
+  animation-play-state: paused;
+}
+
+.imageCard {
+  flex: 0 0 auto;
+  height: 180px;
+  border-radius: 0.875rem;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-card-background-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imageCard:hover {
+  transform: scale(1.04) translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+.imageCard img {
+  height: 100%;
+  width: auto;
+  max-width: none;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .imageCard {
+    height: 140px;
+  }
+
+  .galleryTrack {
+    animation-duration: 26s;
+  }
+}
